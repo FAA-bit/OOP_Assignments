@@ -3,11 +3,11 @@
 ### OOP-Inlämningsuppgift 1
 
 ## Filstruktur
-projekt/
-├── main.cpp                  # Huvudprogram och meny
-├── sensor.h / sensor.cpp     # Sensor-klassen: simulerar mätvärden
-├── measurement.h             # Measurement-struktur: lagrar enskilda mätningar
-├── storage.h / .cpp          # MeasurementStorage: lagrar och analyserar data
+projekt:
+# Main.cpp - Huvudprogram och meny
+# Sensor.h / sensor.cpp - Sensor-klassen: simulerar mätvärden
+# Measurement.h - Measurement-struktur: lagrar enskilda mätningar
+# storage.h / .cpp - MeasurementStorage: lagrar och analyserar data
 
 ## Funktioner
 ✅ Sensorsimulering
