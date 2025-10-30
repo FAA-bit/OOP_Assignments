@@ -4,10 +4,10 @@
 
 ## Filstruktur
 projekt:
-# Main.cpp - Huvudprogram och meny
-# Sensor.h / sensor.cpp - Sensor-klassen: simulerar mätvärden
-# Measurement.h - Measurement-struktur: lagrar enskilda mätningar
-# storage.h / .cpp - MeasurementStorage: lagrar och analyserar data
+* Main.cpp - Huvudprogram och meny
+* Sensor.h / sensor.cpp - Sensor-klassen: simulerar mätvärden
+* Measurement.h - Measurement-struktur: lagrar enskilda mätningar
+* Storage.h / .cpp - MeasurementStorage: lagrar och analyserar data
 
 ## Funktioner
 ✅ Sensorsimulering
