@@ -20,12 +20,12 @@ string getTimestamp() {  // Get current timestamp as string
 }
 
 int main() {
-    Sensor temp("TempSensor 1", "°C", 18.0, 25.0);
+    Sensor temperatur("TemperaturSensor", "°C", 10.0, 25.0);
     Sensor humidity("HumiditySensor", "%", 30.0, 60.0);
     Sensor pressure("PressureSensor", "hPa", 950.0, 1050.0);
 	Sensor light("LightSensor", "Lux", 100.0, 1000.0);
     Sensor sound("SoundSensor", "dB", 30.0, 90.0);
-    vector<Sensor> sensors = { temp, humidity, pressure, light, sound };
+    vector<Sensor> sensors = { temperatur, humidity, pressure, light, sound };
 
     MeasurementStorage storage;
     int choice;
