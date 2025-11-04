@@ -17,7 +17,7 @@ void MeasurementStorage::addMeasurement(const Measurement& m) {
 
 void MeasurementStorage::printAll() const {
 	for (const auto& m : data) {
-		std::cout << std::fixed << std::setprecision(2)
+		std::cout << std::fixed << std::setprecision(1)
 			<< m.timestamp << ", " << m.sensorName << ", "
 			<< m.value << ", " << m.unit << std::endl;
 	}
@@ -48,7 +48,7 @@ void MeasurementStorage::printStats(const std::string& sensorName) const {
     }
     double stddev = std::sqrt(variance / values.size());
 
-    std::cout << std::fixed << std::setprecision(2);
+    std::cout << std::fixed << std::setprecision(1);
     std::cout << "Statistics for sensor: " << sensorName << std::endl;
     std::cout << "Count: " << values.size() << std::endl;
     std::cout << "Average: " << mean << std::endl;
@@ -100,15 +100,4 @@ void MeasurementStorage::loadFromFile(const std::string& filename) {
 
     file.close();
     std::cout << "Data loaded from " << filename << std::endl;
-}
-
-void MeasurementStorage::searchBySensor(const std::string& sensorName) const {
-    std::cout << "Filtered measurements for sensor: " << sensorName << std::endl;
-    for (const auto& m : data) {
-        if (m.sensorName == sensorName) {
-            std::cout << std::fixed << std::setprecision(2)
-                << m.timestamp << ", " << m.sensorName << ", "
-                << m.value << ", " << m.unit << std::endl;
-        }
-    }
 }

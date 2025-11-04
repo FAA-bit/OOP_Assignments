@@ -13,7 +13,6 @@ public:
     void printStats(const std::string& sensorName) const;
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
-    void searchBySensor(const std::string& sensorName) const;
 };
 
 

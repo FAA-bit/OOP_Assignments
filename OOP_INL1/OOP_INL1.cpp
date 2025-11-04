@@ -20,7 +20,7 @@ string getTimestamp() {  // Get current timestamp as string
 }
 
 int main() {
-    Sensor temperatur("TemperaturSensor", "°C", 10.0, 25.0);
+    Sensor temperatur("TemperaturSensor", "°C", 0.0, 25.0);
     Sensor humidity("HumiditySensor", "%", 30.0, 60.0);
     Sensor pressure("PressureSensor", "hPa", 950.0, 1050.0);
 	Sensor light("LightSensor", "Lux", 100.0, 1000.0);
@@ -37,7 +37,6 @@ int main() {
         cout << "3. Show statistics per sensor\n";
         cout << "4. Save to file\n";
         cout << "5. Load from file\n";
-        cout << "6. Search by sensor name\n";
         cout << "0. Exit\n";
         cout << "Choice: ";
         cin >> choice;
@@ -80,23 +79,18 @@ int main() {
             storage.loadFromFile(filename);
             break;
         }
-        case 6: {
-            string name;
-            cout << "Enter sensor name to search: ";
-            cin.ignore(); getline(cin, name);
-            storage.searchBySensor(name);
-            break;
-        }
         case 0:
             cout << "Exiting...\n";
-            break;
+			break;
         default:
-            cout << "Invalid choice.\n";
+			cout << "Invalid choice.\n";
+            break;
         }
     } while (choice != 0);
-
-    return 0;
+	return 0;
 }
+
+
 
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
