@@ -17,7 +17,7 @@ void MeasurementStorage::addMeasurement(const Measurement& m) {
 
 void MeasurementStorage::printAll() const {
 	for (const auto& m : data) {
-		std::cout << std::fixed << std::setprecision(1)
+		std::cout << std::fixed << std::setprecision(1)  // Set precision for floating-point values
 			<< m.timestamp << ", " << m.sensorName << ", "
 			<< m.value << ", " << m.unit << std::endl;
 	}
