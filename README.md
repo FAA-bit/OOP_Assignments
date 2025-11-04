@@ -37,9 +37,7 @@ projekt:
 - Visa all lagrad data
 - Visa statistik per sensor
 - Spara/läs data till/från fil
-- (Valfritt) Sök/filter på sensornamn eller datumintervall
 
 
-
-
-# FAID ABSHIR ABDILE 
+  
+# FAID ABSHIR ABDILE #
