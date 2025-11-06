@@ -25,7 +25,9 @@ int main() {
     Sensor pressure("PressureSensor", "hPa", 950.0, 1050.0);
 	Sensor light("LightSensor", "Lux", 100.0, 1000.0);
     Sensor sound("SoundSensor", "dB", 30.0, 90.0);
-    vector<Sensor> sensors = { temperatur, humidity, pressure, light, sound };
+    Sensor vibration("VibrationSensor", "m/s²", 0.0, 10.0);
+	Sensor gas("GasSensor", "ppm", 200.0, 1000.0);
+    vector<Sensor> sensors = { temperatur, humidity, pressure, light, sound, vibration, gas };
 
     MeasurementStorage storage;
     int choice;

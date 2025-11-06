@@ -1,5 +1,7 @@
-2025-11-04 11:33:34,TemperaturSensor,20.691,°C
-2025-11-04 11:33:34,HumiditySensor,49.4731,%
-2025-11-04 11:33:34,PressureSensor,1022.74,hPa
-2025-11-04 11:33:34,LightSensor,738.04,Lux
-2025-11-04 11:33:34,SoundSensor,48.7927,dB
+2025-11-06 09:38:53,TemperaturSensor,22.977,°C
+2025-11-06 09:38:53,HumiditySensor,38.3056,%
+2025-11-06 09:38:53,PressureSensor,960.534,hPa
+2025-11-06 09:38:53,LightSensor,565.33,Lux
+2025-11-06 09:38:53,SoundSensor,37.1421,dB
+2025-11-06 09:38:53,VibrationSensor,4.80917,m/s²
+2025-11-06 09:38:53,GasSensor,894.296,ppm
