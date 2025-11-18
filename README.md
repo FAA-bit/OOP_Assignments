@@ -62,4 +62,8 @@ projekt:
         
 OOP_INL2/Copilot_20251118_092336.png
 
+Mitt UML-klassdiagram finns i länken ovan. Det visar den abstrakta basklassen Sensor, de tre konkreta underklasserna (TemperatureSensor, HumiditySensor, PressureSensor), plus SystemController, Measurement, Threshold och Alert med deras attribut och metoder, och relationerna mellan dem.
+
+
+
 # FAID ABSHIR ABDILE #
