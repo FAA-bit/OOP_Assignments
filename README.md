@@ -59,59 +59,7 @@ projekt:
                         ▲
         -----------------------------------------
         |                   |                   |
-+-------------------+ +-------------------+ +-------------------+
-| TemperatureSensor | | HumiditySensor    | | PressureSensor    |
-+-------------------+ +-------------------+ +-------------------+
-| -id_: string      | | -id_: string      | | -id_: string      |
-| -minV_: double    | | -minV_: double    | | -minV_: double    |
-| -maxV_: double    | | -maxV_: double    | | -maxV_: double    |
-+-------------------+ +-------------------+ +-------------------+
-| +read(): double   | | +read(): double   | | +read(): double   |
-| +name(): string   | | +name(): string   | | +name(): string   |
-| +unit(): string   | | +unit(): string   | | +unit(): string   |
-+-------------------+ +-------------------+ +-------------------+
-+-------------------+
-| Measurement       |
-+-------------------+
-| timestamp: string |
-| sensorName: string|
-| value: double     |
-| unit: string      |
-+-------------------+ 
-
-+-------------------+
-| Threshold         |
-+-------------------+
-| sensorName: string|
-| limit: double     |
-| over: bool        |
-+-------------------+
-
-+-------------------+
-| Alert             |
-+-------------------+
-| timestamp: string |
-| sensorName: string|
-| value: double     |
-| rule: string      |
-+-------------------+
-
-+-------------------+
-| SystemController  |
-+-------------------+
-| -sensors_: vector |
-| -data_: vector    |
-| -thresholds_: vector|
-| -alerts_: vector  |
-+-------------------+
-| +addSensor()      |
-| +sampleAllOnce()  |
-| +configureThreshold() |
-| +showAlerts()     |
-| +showStatsFor()   |
-| +saveToFile()     |
-| +loadFromFile()   |
-+-------------------+
-
+        
+OOP_INL2/Copilot_20251118_092336.png
 
 # FAID ABSHIR ABDILE #
