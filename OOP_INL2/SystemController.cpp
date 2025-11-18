@@ -18,16 +18,27 @@ void SystemController::sampleAllOnce() {
     for (auto& s : sensors_) {
         double val = s->read();
 
-        auto now = std::chrono::system_clock::now();
+		// Get current timestamp
+        std::time_t t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+
+        struct tm buf;
+        localtime_s(&buf, &t);
+
+        std::ostringstream oss;
+        oss << std::put_time(&buf, "%Y-%m-%d %H:%M:%S");
+        std::string ts = oss.str();
+
+        /*auto now = std::chrono::system_clock::now();
         std::time_t t = std::chrono::system_clock::to_time_t(now);
 
         std::ostringstream oss;
         oss << std::put_time(std::localtime(&t), "%Y-%m-%d %H:%M:%S");
         std::string ts = oss.str();
+        */
 
-		data_.push_back({ ts, s->name(), val, s->unit() }); // Store measurement
+		data_.push_back({ ts, s->name(), val, s->unit() }); // Store measurement: Records the timestamp, sensor name, value, and unit.
 
-		// Check thresholds. It is used to generate alerts.
+		// Check thresholds: For matching sensor rules, evaluates the condition and logs an alert if broken.
         for (const auto& t : thresholds_) {
             if (t.sensorName == s->name()) {
                 bool alarm = (t.over && val > t.limit) || (!t.over && val < t.limit);
@@ -39,6 +50,19 @@ void SystemController::sampleAllOnce() {
         }
     }
 }
+
+void SystemController::showAllMeasurements() const {
+    if (data_.empty()) {
+        std::cout << "No measurements recorded yet.\n";
+        return;
+    }
+
+    for (const auto& m : data_) {
+        std::cout << m.timestamp << " | " << m.sensorName
+            << " = " << m.value << " " << m.unit << "\n";
+    }
+}
+
 
 void SystemController::configureThreshold() {
     std::string sensor;
@@ -55,6 +79,7 @@ void SystemController::configureThreshold() {
     thresholds_.push_back({ sensor, limit, direction == 'o' });
 }
 
+// Prints all recorded alerts.
 void SystemController::showAlerts() const {
     for (const auto& a : alerts_) {
         std::cout << a.timestamp << " | " << a.sensorName

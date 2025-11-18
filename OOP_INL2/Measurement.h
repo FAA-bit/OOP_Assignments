@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-// Represents a single measurement from a sensor.
-struct Measurement { 
+
+struct Measurement {  // Represents one recorded measurement with time, sensor name, numeric value, and unit.
     std::string timestamp;
     std::string sensorName;
     double value;

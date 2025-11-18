@@ -19,11 +19,12 @@ int main() {
     while (running) {
         std::cout << "\n--- MENU ---\n";
         std::cout << "1. Read new measurements\n";
-        std::cout << "2. Show statistics for a sensor\n";
-        std::cout << "3. Show all alerts\n";
-        std::cout << "4. Configure threshold rule\n";
-        std::cout << "5. Save measurement data to file\n";
-        std::cout << "6. Load measurement data from file\n";
+		std::cout << "2. Show all measurements\n";
+        std::cout << "3. Show statistics for a sensor\n";
+        std::cout << "4. Show all alerts\n";
+        std::cout << "5. Configure threshold rule\n";
+        std::cout << "6. Save measurement data to file\n";
+        std::cout << "7. Load measurement data from file\n";
         std::cout << "0. Exit\n";
         std::cout << "Choice: ";
 
@@ -34,27 +35,30 @@ int main() {
         case 1:
             controller.sampleAllOnce();
             break;
-        case 2: {
+        case 2:
+            controller.showAllMeasurements();
+            break;
+        case 3: {
             std::string sensorName;
             std::cout << "Enter sensor name: ";
             std::cin >> sensorName;
             controller.showStatsFor(sensorName);
             break;
         }
-        case 3:
+        case 4:
             controller.showAlerts();
             break;
-        case 4:
+        case 5:
             controller.configureThreshold();
             break;
-        case 5: {
+        case 6: {
             std::string filename;
             std::cout << "Filename to save to: ";
             std::cin >> filename;
             controller.saveToFile(filename);
             break;
         }
-        case 6: {
+        case 7: {
             std::string filename;
             std::cout << "Filename to load from: ";
             std::cin >> filename;
