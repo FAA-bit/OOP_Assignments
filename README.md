@@ -70,7 +70,6 @@ projekt:
 | +name(): string   | | +name(): string   | | +name(): string   |
 | +unit(): string   | | +unit(): string   | | +unit(): string   |
 +-------------------+ +-------------------+ +-------------------+
-
 +-------------------+
 | Measurement       |
 +-------------------+
@@ -78,7 +77,7 @@ projekt:
 | sensorName: string|
 | value: double     |
 | unit: string      |
-+-------------------+
++-------------------+ 
 
 +-------------------+
 | Threshold         |
