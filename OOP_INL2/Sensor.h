@@ -3,6 +3,10 @@
 
 
 class Sensor {  // Deklarerar en abstrakt basklass för alla sensorer.
+	/*En abstrakt basklass är alltså en grundmall som definierar vilka funktioner som måste finnas, 
+	men lämnar implementationen till subklasserna.
+	Den används för att skapa gemensamma regler och möjliggöra polymorfism.
+	*/
 public:
 	virtual ~Sensor() = default; // en virtuell destruktor att säkerställa korrekt minneshantering när jag använder pekare.
 	// pure virtual function är en metod som deklareras i en basklass men inte har någon implementation där.

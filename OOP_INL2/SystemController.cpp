@@ -15,8 +15,8 @@ void SystemController::addSensor(std::unique_ptr<Sensor> s) {
 }
 
 void SystemController::sampleAllOnce() {
-    for (auto& s : sensors_) {
-		double val = s->read(); // Read() - is a polymorphic function that retrieves a measurement from the respective sensor.
+	for (auto& s : sensors_) { // Itererar över alla sensorer i systemet
+		double val = s->read(); // Read() - är en polymorf funktion som hämtar ett mätvärde från respektive sensor.
 
 		// Get current timestamp
         std::time_t t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
