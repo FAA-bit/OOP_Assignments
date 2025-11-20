@@ -1,4 +1,4 @@
-#include "SystemController.h"
+﻿#include "SystemController.h"
 #include "Sensor.h"
 #include <iostream>
 #include <fstream>
@@ -16,7 +16,7 @@ void SystemController::addSensor(std::unique_ptr<Sensor> s) {
 
 void SystemController::sampleAllOnce() {
     for (auto& s : sensors_) {
-        double val = s->read();
+		double val = s->read(); // Read() - is a polymorphic function that retrieves a measurement from the respective sensor.
 
 		// Get current timestamp
         std::time_t t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -63,7 +63,7 @@ void SystemController::showAllMeasurements() const {
     }
 }
 
-
+// Configures a new threshold rule based on user input.
 void SystemController::configureThreshold() {
     std::string sensor;
     double limit;
@@ -85,11 +85,15 @@ void SystemController::showAlerts() const {
         std::cout << a.timestamp << " | " << a.sensorName
             << " value=" << a.value << " broke rule " << a.rule << "\n";
     }
+	// If no alerts.
+    if (alerts_.empty()) {
+		std::cout << "No alerts recorded.\n";
+	}
 }
 
 void SystemController::showStatsFor(const std::string& sensorName) const {
-    std::vector<double> values;
-    for (const auto& m : data_) {
+	std::vector<double> values; 
+	for (const auto& m : data_) { // Collects all values ​​that match the requested sensor name.
         if (m.sensorName == sensorName) values.push_back(m.value);
     }
     if (values.empty()) {
@@ -114,7 +118,7 @@ void SystemController::showStatsFor(const std::string& sensorName) const {
 
 void SystemController::saveToFile(const std::string& path) const {
     std::ofstream file(path);
-    for (const auto& m : data_) {
+    for (const auto& m : data_) { 
         file << m.timestamp << "," << m.sensorName << "," << m.value << "," << m.unit << "\n";
     }
     std::cout << "Saved to " << path << "\n";
